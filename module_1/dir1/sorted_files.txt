@@ -1,0 +1,5 @@
+total 0
+-rw-rw-r-- 1 kavin kavin 0 Jan 22 21:28 sorted_files.txt
+-rw-rw-r-- 1 kavin kavin 0 Jan 22 21:28 f3.txt
+-rw-rw-r-- 1 kavin kavin 0 Jan 22 21:28 f2.txt
+-rw-rw-r-- 1 kavin kavin 0 Jan 22 21:27 f1.txt
