@@ -1,0 +1,14 @@
+# Database Configuration
+db_host=127.0.0.1
+
+# API Settings
+api_endpoint=http://127.0.0.1:8080/api
+backup_server=127.0.0.1:9000
+
+# Cache Settings
+cache_server=127.0.0.1:6379
+redis_host=127.0.0.1
+redis_port=6379
+
+# Load Balancer
+primary_server=127.0.0.1:8081
