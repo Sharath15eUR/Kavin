@@ -1,36 +1,45 @@
 #!/bin/bash
 
-# Check if input file is provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <input_file>"
-    exit 1
+# Define file paths
+INPUT_FILE="/home/kavin/embedUR/module_4/input.txt"
+OUTPUT_FILE="output.txt"
+
+# Create output file if it doesn't exist, otherwise clear its contents
+if [ ! -f "$OUTPUT_FILE" ]; then
+    touch "$OUTPUT_FILE"
+else
+    > "$OUTPUT_FILE"
 fi
 
-input_file="$1"
-output_file="output.txt"
+# Define parameters to search for
+params=("frame.time" "wlan.fc.type" "wlan.fc.subtype")
 
-# Clear or create output file
-> "$output_file"
+# Initialize line counter
+line_number=0
 
+# Record start time
+start_time=$(date +%s.%N)
 
-while IFS= read -r line; do
-    # Extract frame time
-    if [[ $line =~ \"frame.time\":[[:space:]]*\"([^\"]+)\" ]]; then
-        frame_time="${BASH_REMATCH[1]}"
-        echo "\"frame.time\": \"$frame_time\"," >> "$output_file"
+# Process each line
+while read -r line; do
+    ((line_number++))
+    
+    # Only process lines containing a quote (potential parameter lines)
+    if [[ $line == *"\""* ]]; then
+        for param in "${params[@]}"; do
+            # Using bash string comparison instead of grep
+            if [[ $line == *"\"$param\""* ]]; then
+                # Using parameter expansion instead of sed/cut
+                value=${line#*: }
+                echo "Line $line_number: Found $param"
+                echo "\"$param\": $value" >> "$OUTPUT_FILE"
+                break  # Exit loop once parameter is found
+            fi
+        done
     fi
+done < "$INPUT_FILE"
 
-    # Extract wlan.fc.type
-    if [[ $line =~ \"wlan.fc.type\":[[:space:]]*\"([^\"]+)\" ]]; then
-        fc_type="${BASH_REMATCH[1]}"
-        echo "\"wlan.fc.type\": \"$fc_type\"," >> "$output_file"
-    fi
-
-    # Extract wlan.fc.subtype
-    if [[ $line =~ \"wlan.fc.subtype\":[[:space:]]*\"([^\"]+)\" ]]; then
-        fc_subtype="${BASH_REMATCH[1]}"
-        echo "\"wlan.fc.subtype\": \"$fc_subtype\"," >> "$output_file"
-        # Add a blank line after each complete set of parameters
-        echo "" >> "$output_file"
-    fi
-done < "$input_file"
+# Calculate and display execution time
+end_time=$(date +%s.%N)
+execution_time=$(echo "$end_time - $start_time" | bc)
+echo "Processed $line_number lines in $execution_time seconds"
