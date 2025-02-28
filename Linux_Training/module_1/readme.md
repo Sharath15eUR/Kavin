@@ -8,15 +8,9 @@
 ```bash
 #Alternatively we can also use octal notiona to achieve the same by using the below command
 
-chmod 755 file1.txt
+chmod 111 file1.txt
 
 ```
-- Here `rwxr-xr-x` indicates that the owner, group and others all have executable permissions for the file.
-
-- Where 
-    - `rwx` means read, write execute for owner
-    - `r-x` means read and execute for group and others
-
 #
 ### 2. Create a file and remove write permission for the group user alone
 

@@ -66,9 +66,7 @@ primary_server=127.0.0.1:8081
     => config.txt -> Input file
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-3.Use the appropriate command to search for lines containing the word "ERROR" in a log file but exclude lines containing "DEBUG". 
-  Save the results to a file named filtered_log.txt.
+3.Use the appropriate command to search for lines containing the word "ERROR" in a log file but exclude lines containing "DEBUG". Save the results to a file named filtered_log.txt.
 
 kavin@adonis:~/embedUR/module_2$ grep "ERROR" log.txt | grep -v "DEBUG" > filtered_log.txt
 kavin@adonis:~/embedUR/module_2$ cat filtered_log.txt
