@@ -146,10 +146,8 @@
    ping 192.168.1.102
 
    ```
-
-*[SCREENSHOT 3.3: Command prompt showing ipconfig output with custom MAC]*
 ![alt text](images/image12.png)
-*[SCREENSHOT 3.4: Command prompt showing successful pings with new IPs]*
+
 ![alt text](images/image13.png)
 
 5. Check the switch's MAC table:
@@ -166,7 +164,7 @@
 ### Equipment Required
 - 1 Cisco 2960 Switch
 - 2 PCs (to represent Linux machines)
-- Ethernet cables
+- Ethernet cablesk
 
 ### Step-by-Step Instructions
 
@@ -198,7 +196,8 @@
    - Type: `ping 192.168.1.20`
    - Verify successful communication
 
-*[SCREENSHOT 4.3: Successful ping between Linux machines]*
+
+
 ![alt text](images/image18.png)
 
 #### 4. Create and troubleshoot network issues
@@ -231,7 +230,7 @@
    - On Linux1, type: `tracert 192.168.2.20`
    - Observe that packets aren't reaching destination
 
-*[SCREENSHOT 4.7: Tracert output showing failure to reach destination]*
+
 ![alt text](images/image23.png)
 
 5. Fix the issue:
@@ -357,8 +356,6 @@ Since Packet Tracer doesn't fully support Linux bridge commands, you can:
    - Go to CLI tab
    - Type: `enable`
    - Type: `show mac address-table`
-
-*[SCREENSHOT 10.1: Switch MAC address table in Packet Tracer as an equivalent to Linux bridge command]*
 ![](images/image14.png)
 
 2. Explain how this relates to Linux bridge functionality:
