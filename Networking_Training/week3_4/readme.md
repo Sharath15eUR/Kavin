@@ -77,11 +77,9 @@
 
 ## Task 2: Detailed Ethernet Frame Analysis
 
-### Equipment Required
-- Same network setup as Task 1
-- Wireshark (if available, otherwise use Packet Tracer's simulation mode)
 
-### Step-by-Step Instructions
+#### Network
+![alt text](images/image24.png) 
 
 #### 1. Using Packet Tracer's simulation mode for frame analysis
 1. Ensure you're in Simulation mode
@@ -96,39 +94,29 @@
    - Ping between devices
    - If possible, generate other traffic types (HTTP, FTP, etc.)
 
-![alt text](images/image8.png)
+![alt text](images/image25.png)
 4. Capture and inspect different frame types:
    - Click on different packets in the simulation panel
    - For each, analyze the Ethernet frame structure
    
-![alt text](images/image9.png)
-Tring to generate HTTP frames here.
-
-#### 2. Detailed frame component inspection
-1. For an ARP packet:
-   - Note the broadcast destination MAC (FF:FF:FF:FF:FF:FF)
-   - Observe the Ethertype field (0x0806)
-   - Examine the ARP payload structure
+![alt text](images/image26.png)
+![alt text](images/image27.png)
+![alt text](images/image28.png)
 
 ## Task 3: Configure Static IP and MAC Addresses
-
-
-
-
 
 #### 1. Configure static IP addresses
 1. Click on PC1
 2. Go to Desktop tab → IP Configuration
 3. Configure a new static IP:
-   - IP Address: 192.168.1.100
+   - IP Address: 192.168.1.10
    - Subnet Mask: 255.255.255.0
-   - Default Gateway: 192.168.1.1 (optional)
+
 4. Repeat for other PCs with different IPs:
-   - PC2: 192.168.1.101
-   - PC3: 192.168.1.102
+   - PC2: 192.168.1.10
+   - PC3: 192.168.1.20
+   - Server 192.168.1.30
 
-
-![alt text](images/imag10.png)
 
 #### 2. Modify MAC addresses
 1. Click on PC1
