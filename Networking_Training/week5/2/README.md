@@ -42,6 +42,6 @@ exit
 
 - After that if you ping `192.168.1.1` again and check thr ARP table we can see the MAC address of the attacker not router
 
-![alt text](image.png)
+![alt text](images/2_5.png)
 
 
